@@ -1,4 +1,4 @@
-package com.test.project;
+package com.test.project.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
