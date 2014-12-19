@@ -1,8 +1,8 @@
 package com.test.project.controller;
 
+import com.test.project.dao.iface.UserDao;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +15,13 @@ public class TestController {
     private static final Logger logger = Logger.getLogger(TestController.class);
 
     @Autowired
-    ApplicationContext applicationContext;
+    private UserDao userDao;
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
         model.addAttribute("message", "Hello Mops!");
         logger.info("welcome request");
+        userDao.show();
         return "hello";
     }
 
