@@ -3,15 +3,18 @@ package com.test.project.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String login;
+    private String password;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
     public int getId() {
         return id;
@@ -20,8 +23,6 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-
-    private String password;
 
     public String getLogin() {
         return login;
