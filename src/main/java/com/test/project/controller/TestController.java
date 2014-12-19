@@ -21,7 +21,6 @@ public class TestController {
     public String printWelcome(ModelMap model) {
         model.addAttribute("message", "Hello Mops!");
         logger.info("welcome request");
-        userService.show();
         return "hello";
     }
 

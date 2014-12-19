@@ -11,7 +11,9 @@ public class Role {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String rolename;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
     private List<User> users;
 
