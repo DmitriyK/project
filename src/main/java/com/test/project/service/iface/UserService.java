@@ -1,11 +1,7 @@
 package com.test.project.service.iface;
 
-import com.test.project.model.User;
+import com.test.project.service.common.CommonService;
 
-public interface UserService {
+public interface UserService extends CommonService{
 
-    public void addUser(User user);
-    public User getUser(int id);
-    public void updateUser(User user);
-    public void deleteUser(User user);
 }

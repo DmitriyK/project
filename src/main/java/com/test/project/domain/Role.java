@@ -1,29 +1,18 @@
-package com.test.project.model;
+package com.test.project.domain;
+
+import com.test.project.domain.common.Common;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "roles")
-public class Role {
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class Role extends Common {
 
     private String rolename;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
     private List<User> users;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getRolename() {
         return rolename;
