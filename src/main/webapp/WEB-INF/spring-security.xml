@@ -8,13 +8,15 @@
            http://www.springframework.org/schema/security/spring-security.xsd">
 
     <security:http auto-config='true'>
-        <security:intercept-url pattern="/**" access="ROLE_USER" />
+        <security:intercept-url pattern="/" access="ROLE_USER" />
     </security:http>
 
     <security:authentication-manager>
-        <security:authentication-provider user-service-ref="SecurityUserDetailsServiceImpl" >
+        <security:authentication-provider user-service-ref="securityUserDetailsServiceImpl" >
             <security:password-encoder hash="plaintext" />
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="securityUserDetailsServiceImpl" class="com.test.project.security.SecurityUserDetailsServiceImpl" />
 
 </beans>
