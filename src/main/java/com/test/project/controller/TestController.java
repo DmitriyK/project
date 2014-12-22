@@ -34,7 +34,7 @@ public class TestController {
         Role role = new Role();
         role.setRolename("user");
         user.setRole(role);
-        user.setLogin("login");
+        user.setUsername("login");
         user.setPassword("pass");
         userService.addEntity(role);
         return "hello";

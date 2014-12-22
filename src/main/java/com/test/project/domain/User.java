@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User extends Common {
 
-    private String login;
+    private String username;
 
     private String password;
 
@@ -16,12 +16,12 @@ public class User extends Common {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
