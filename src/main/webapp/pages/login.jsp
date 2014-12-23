@@ -6,37 +6,34 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
-    <link href="<c:url value="/pages/css/bootstrap.css" />" rel="stylesheet">
+    <link rel="icon" href="/pages/custom/favicon.ico">
+    <link href="<c:url value="/pages/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/pages/custom/css/signin.css" />" rel="stylesheet">
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <title>Login page</title>
 </head>
-<body onload='document.loginForm.j_username.focus();'>
+<body>
 
-<div>
-    <form name='loginForm'
-          action="<c:url value='/j_spring_security_check' />" method='POST'>
-
-        <table>
-            <tr>
-                <td>User:</td>
-                <td><input type='text' name='j_username'></td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input type='password' name='j_password'/></td>
-            </tr>
-            <tr>
-                <td colspan='2'><input name="submit" type="submit"
-                                       value="submit"/></td>
-            </tr>
-        </table>
+<div class="container">
+    <form action="<c:url value='/j_spring_security_check' />" method='POST' class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus name='j_username'>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name='j_password'>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
         <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}"/>
-
     </form>
 </div>
 
+<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
