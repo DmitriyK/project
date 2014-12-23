@@ -20,10 +20,10 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven/>
 
-    <mvc:resources mapping="/**" location="WEB-INF"/>
+    <mvc:resources mapping="/pages/**" location="pages/"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 

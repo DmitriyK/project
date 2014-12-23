@@ -14,7 +14,6 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
     @Transactional
     public User findByUserName(String username) {
         User user = (User) getSession().createQuery("from User where username = :username").setParameter("username", username).uniqueResult();
-        System.out.println("");
         return user;
     }
 }
