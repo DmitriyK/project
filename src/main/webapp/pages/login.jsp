@@ -19,14 +19,13 @@
     <form action="<c:url value='/j_spring_security_check' />" method='POST' class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus name='j_username'>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus
+               name='j_username'>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name='j_password'>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+               name='j_password'>
+        <input id="rememberMe" type="checkbox" name="_spring_security_remember_me">
+        <label for="rememberMe">Remember me</label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
         <input type="hidden" name="${_csrf.parameterName}"

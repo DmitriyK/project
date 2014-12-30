@@ -19,12 +19,12 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    /*@RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
         model.addAttribute("message", "Hello Mops!");
         logger.info("welcome request");
         return "hello";
-    }
+    }*/
 
     @RequestMapping(value = "/he", method = RequestMethod.GET)
     public String abc(ModelMap model) {

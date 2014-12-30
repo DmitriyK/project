@@ -7,16 +7,21 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <security:http auto-config='true'>
-        <security:intercept-url pattern="/pages/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <security:intercept-url pattern="/" access="ROLE_USER" />
+    <security:global-method-security secured-annotations="enabled" />
+
+    <security:http auto-config='true' use-expressions="true">
+        <security:intercept-url pattern="/pages/**" access="permitAll()"/>
+        <security:intercept-url pattern="/login" access="isAnonymous()"/>
+        <security:intercept-url pattern="/*" access="!isAnonymous()" />
         <security:access-denied-handler error-page="/403" />
         <security:form-login
                 login-page="/login"
                 default-target-url="/welcome"
+                always-use-default-target="true"
                 authentication-failure-url="/login?error"
                 username-parameter="j_username"
-                password-parameter="j_password" />
+                password-parameter="j_password"/>
+        <security:remember-me key="remember-me" token-validity-seconds="0" />
         <security:logout logout-success-url="/login?logout" />
         <security:csrf />
     </security:http>
