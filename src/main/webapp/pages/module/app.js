@@ -1,1 +1,4 @@
-var app = angular.module('store', []);
+(function () {
+    'use strict';
+    var app = angular.module('store', []);
+}());
