@@ -5,7 +5,7 @@
 <html ng-app="store">
 <head>
     <title>Welcome</title>
-    <link href="<c:url value="/pages/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/pages/bootstrap/css/bootstrap.css" />" rel="stylesheet">
 </head>
 <body>
     <script src="<c:url value="/pages/angular/angular.min.js" />"></script>

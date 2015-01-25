@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="/pages/custom/favicon.ico">
-    <link href="<c:url value="/pages/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/pages/bootstrap/css/bootstrap.css" />" rel="stylesheet">
     <link href="<c:url value="/pages/custom/css/signin.css" />" rel="stylesheet">
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 
