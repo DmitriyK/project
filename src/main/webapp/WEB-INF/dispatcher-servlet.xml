@@ -54,4 +54,11 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+     	<mvc:interceptors>
+     		<mvc:interceptor>
+     			<mvc:mapping path="/*" />
+     			<bean class="com.test.project.interceptor.LoginInterceptor" />
+     		</mvc:interceptor>
+     	</mvc:interceptors>
+
 </beans>

@@ -16,6 +16,13 @@
 <body>
 
 <div class="container">
+
+    <%--<c:if test="${not empty message}">
+        <div style="color:red">
+            Your fake login attempt was bursted, dare again !!<br />
+        </div>
+    </c:if>--%>
+
     <form action="<c:url value='/j_spring_security_check' />" method='POST' class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputUsername" class="sr-only">Username</label>

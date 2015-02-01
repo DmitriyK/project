@@ -3,13 +3,16 @@ package com.test.project.domain;
 import com.test.project.domain.common.Common;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
 public class User extends Common {
 
+    @Size(min = 6, message = "wrong username")
     private String username;
 
+    @Size(min = 8, message = "wrong pass")
     private String password;
 
     @ManyToOne
