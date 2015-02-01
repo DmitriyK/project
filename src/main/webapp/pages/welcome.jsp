@@ -8,11 +8,12 @@
     <link href="<c:url value="/pages/bootstrap/css/bootstrap.css" />" rel="stylesheet">
 </head>
 <body>
-    <script src="<c:url value="/pages/angular/angular.min.js" />"></script>
-    <script src="<c:url value="/pages/module/app.js" />"></script>
 Welcome!
 <p>
     I am {{4 + 6}}
 </p>
+
+<script src="<c:url value="/pages/angular/angular.min.js" />"></script>
+<script src="<c:url value="/pages/module/app.js" />"></script>
 </body>
 </html>

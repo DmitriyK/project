@@ -31,12 +31,11 @@ public class TestController {
         model.addAttribute("message", "I love my mops");
         logger.error("error");
         User user = new User();
-        Role role = new Role();
-        role.setRolename("user");
+        Role role = new Role("user");
         user.setRole(role);
         user.setUsername("login");
         user.setPassword("pass");
-        userService.addEntity(role);
+        //userService.addEntity(role);
         return "hello";
     }
 }

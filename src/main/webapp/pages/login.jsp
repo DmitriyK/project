@@ -3,14 +3,12 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="/pages/custom/favicon.ico">
     <link href="<c:url value="/pages/bootstrap/css/bootstrap.css" />" rel="stylesheet">
     <link href="<c:url value="/pages/custom/css/signin.css" />" rel="stylesheet">
-    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-
     <title>Login page</title>
 </head>
 <body>
@@ -37,6 +35,7 @@
 
         <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}"/>
+        <a href="registration">Registration</a>
     </form>
 </div>
 

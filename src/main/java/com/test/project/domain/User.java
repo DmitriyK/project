@@ -1,6 +1,7 @@
 package com.test.project.domain;
 
 import com.test.project.domain.common.Common;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -9,11 +10,16 @@ import javax.validation.constraints.Size;
 @Table(name = "users")
 public class User extends Common {
 
+    @Column(name = "username", unique = true, nullable = false)
     @Size(min = 6, message = "wrong username")
     private String username;
 
     @Size(min = 8, message = "wrong pass")
     private String password;
+
+    @Column(name = "email", unique = true, nullable = false)
+    @Email
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
@@ -41,5 +47,13 @@ public class User extends Common {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
