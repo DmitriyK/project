@@ -6,11 +6,16 @@
 
     <display-name>Spring MVC Application</display-name>
 
-<!--    <welcome-file-list>
-        <welcome-file>/</welcome-file>
-    </welcome-file-list>-->
+    <!--    <welcome-file-list>
+            <welcome-file>/</welcome-file>
+        </welcome-file-list>-->
 
-    <!-- Spring MVC -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- Spring MVC-->
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>

@@ -9,6 +9,8 @@ import java.util.List;
 @Table(name = "roles")
 public class Role extends Common {
 
+    public Role() {}
+
     public Role(String rolename) {
         this.rolename = rolename;
     }
@@ -16,7 +18,7 @@ public class Role extends Common {
     @Column(name = "rolename", unique = true, nullable = false)
     private String rolename;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "role")
     private List<User> users;
 
     public String getRolename() {

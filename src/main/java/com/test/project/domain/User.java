@@ -1,24 +1,22 @@
 package com.test.project.domain;
 
 import com.test.project.domain.common.Common;
-import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
 public class User extends Common {
 
     @Column(name = "username", unique = true, nullable = false)
-    @Size(min = 6, message = "wrong username")
+    /*@Size(min = 6, message = "wrong username")*/
     private String username;
 
-    @Size(min = 8, message = "wrong pass")
+    /*@Size(min = 8, message = "wrong pass")*/
     private String password;
 
     @Column(name = "email", unique = true, nullable = false)
-    @Email
+    /*@Email*/
     private String email;
 
     @ManyToOne

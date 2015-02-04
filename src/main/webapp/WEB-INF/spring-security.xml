@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:security="http://www.springframework.org/schema/security"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <security:global-method-security secured-annotations="enabled" />
+    <security:global-method-security secured-annotations="enabled"/>
 
     <security:http auto-config='true' use-expressions="true">
+
+
         <!--<security:intercept-url pattern="/**" requires-channel="https"/>
         <security:port-mappings>
             <security:port-mapping http="8080" https="8081"/>
@@ -19,8 +21,8 @@
         <security:intercept-url pattern="/pages/**" access="permitAll()"/>
         <security:intercept-url pattern="/login*" access="isAnonymous()"/>
         <security:intercept-url pattern="/registration" access="isAnonymous()"/>
-        <security:intercept-url pattern="/*" access="!isAnonymous()" />
-        <security:access-denied-handler error-page="/403" />
+        <security:intercept-url pattern="/*" access="!isAnonymous()"/>
+        <security:access-denied-handler error-page="/403"/>
         <security:form-login
                 login-page="/login"
                 default-target-url="/welcome"
@@ -28,17 +30,18 @@
                 authentication-failure-url="/login-error"
                 username-parameter="j_username"
                 password-parameter="j_password"/>
-        <security:remember-me key="remember-me" token-validity-seconds="0" />
-        <security:logout logout-success-url="/login?logout" />
-        <security:csrf />
+        <security:remember-me remember-me-parameter="j_remember_me" data-source-ref="dataSource"/>
+        <!--data-source-ref="dataSource"-->
+        <security:logout logout-success-url="/login?logout"/>
+        <security:csrf/>
     </security:http>
 
     <security:authentication-manager>
-        <security:authentication-provider user-service-ref="securityUserDetailsServiceImpl" >
-            <security:password-encoder hash="plaintext" />
+        <security:authentication-provider user-service-ref="securityUserDetailsServiceImpl">
+            <security:password-encoder hash="plaintext"/>
         </security:authentication-provider>
     </security:authentication-manager>
 
-    <bean id="securityUserDetailsServiceImpl" class="com.test.project.security.SecurityUserDetailsServiceImpl" />
+    <bean id="securityUserDetailsServiceImpl" class="com.test.project.security.SecurityUserDetailsServiceImpl"/>
 
 </beans>
