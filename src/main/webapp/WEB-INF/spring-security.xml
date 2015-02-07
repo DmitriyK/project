@@ -11,12 +11,10 @@
 
     <security:http auto-config='true' use-expressions="true">
 
-
         <!--<security:intercept-url pattern="/**" requires-channel="https"/>
         <security:port-mappings>
             <security:port-mapping http="8080" https="8081"/>
         </security:port-mappings>-->
-
 
         <security:intercept-url pattern="/pages/**" access="permitAll()"/>
         <security:intercept-url pattern="/login*" access="isAnonymous()"/>
@@ -31,17 +29,18 @@
                 username-parameter="j_username"
                 password-parameter="j_password"/>
         <security:remember-me remember-me-parameter="j_remember_me" data-source-ref="dataSource"/>
-        <!--data-source-ref="dataSource"-->
         <security:logout logout-success-url="/login?logout"/>
         <security:csrf/>
     </security:http>
 
     <security:authentication-manager>
         <security:authentication-provider user-service-ref="securityUserDetailsServiceImpl">
-            <security:password-encoder hash="plaintext"/>
+            <security:password-encoder ref="bcrypt"/> <!--hash="plaintext"-->
         </security:authentication-provider>
     </security:authentication-manager>
 
     <bean id="securityUserDetailsServiceImpl" class="com.test.project.security.SecurityUserDetailsServiceImpl"/>
+
+    <bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 </beans>
