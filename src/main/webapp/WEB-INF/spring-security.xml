@@ -11,10 +11,10 @@
 
     <security:http auto-config='true' use-expressions="true">
 
-        <!--<security:intercept-url pattern="/**" requires-channel="https"/>
+        <security:intercept-url pattern="/**" requires-channel="https"/>
         <security:port-mappings>
-            <security:port-mapping http="8080" https="8081"/>
-        </security:port-mappings>-->
+            <security:port-mapping http="8080" https="8443"/>
+        </security:port-mappings>
 
         <security:intercept-url pattern="/pages/**" access="permitAll()"/>
         <security:intercept-url pattern="/login*" access="isAnonymous()"/>
