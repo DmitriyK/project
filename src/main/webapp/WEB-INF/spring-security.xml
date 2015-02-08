@@ -24,7 +24,7 @@
         <security:form-login
                 login-page="/login"
                 default-target-url="/welcome"
-                always-use-default-target="true"
+                always-use-default-target="false"
                 authentication-failure-url="/login-error"
                 username-parameter="j_username"
                 password-parameter="j_password"/>
